@@ -1,0 +1,59 @@
+databaseChangeLog:
+  - changeSet:
+      id: A-0000
+      author: vaishnavi
+      changes:
+        - tagDatabase:
+            tag: A-0000
+
+  - changeSet:
+      id: 1744119421-1
+      author: vaishnavi
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: password
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: created_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modified_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: deleted_at
+                  type: DATETIME
+
+  - changeSet:
+      id: A-0001
+      author: vaishnavi
+      changes:
+        - tagDatabase:
+            tag: A-0001
